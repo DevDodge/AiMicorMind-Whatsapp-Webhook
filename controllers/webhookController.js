@@ -1,10 +1,11 @@
 const validateWebhook = require('../utils/validateWebhook');
 
 exports.handleWebhook = async (req, res) => {
-    const instanceId = req.params.instance;
+    const instanceId = req.body.instance;
     const { event, payload } = req.body;
 
-    if (!validateWebhook(event, payload)) {
+
+    if (!validateWebhook(instanceId, event, payload)) {
         return res.status(400).json({ error: 'Invalid event or payload' });
     }
 

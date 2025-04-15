@@ -9,7 +9,7 @@ const webhookRoutes = require('./routes/webhookRoutes'); // Adjust path if neede
 app.use(bodyParser.json());
 
 // Webhook endpoint
-app.use('/IncomingMessage', webhookRoutes);
+app.use('/webhook', webhookRoutes);
 
 app.get('/', (req, res) => {
     res.send('Welcome to our webhook!');

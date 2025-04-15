@@ -1,4 +1,6 @@
-module.exports = function validateWebhook(event, payload) {
+module.exports = function validateWebhook(instance, event, payload) {
+
+    if (!instance || typeof instance !== 'string') return false;
     if (!event || typeof event !== 'string') return false;
     if (!payload || typeof payload !== 'object') return false;
 
