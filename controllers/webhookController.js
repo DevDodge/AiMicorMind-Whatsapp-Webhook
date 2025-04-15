@@ -15,7 +15,7 @@ exports.handleWebhook = async (req, res) => {
         const eventHandler = require(`../events/${event.replace('.', '_')}`);
         await eventHandler(payload, instanceId);
 
-        return res.status(200).json({ status: 'ok' });
+        return res.status(200).json({ status: 'success' });
     } catch (err) {
         console.error('❌ Error handling event:', err.message);
         return res.status(500).json({ error: 'Internal Server Error' });
