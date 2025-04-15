@@ -9,7 +9,7 @@ exports.handleWebhook = async (req, res) => {
     }
 
     try {
-        console.log(    `🔔 Event received from instance ${instanceId}: ${event}`);
+        console.log(`🔔 Event received from instance ${instanceId}: ${event}`);
 
         // Dynamically load event logic
         const eventHandler = require(`../events/${event.replace('.', '_')}`);

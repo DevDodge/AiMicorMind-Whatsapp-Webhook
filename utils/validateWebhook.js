@@ -4,7 +4,7 @@ module.exports = function validateWebhook(event, payload) {
 
     // You can also add event type whitelist here
     const allowedEvents = [
-        'message.received',
+        'message',
         'instance.connected',
         'instance.disconnected',
         // Add more
